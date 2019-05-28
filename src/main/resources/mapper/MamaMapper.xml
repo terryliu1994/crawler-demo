@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crawler.mama.mapper.MamaMapper">
+    <resultMap id="BaseResultMap" type="com.crawler.mama.model.Mama">
+        <id column="id" jdbcType="DECIMAL" property="id"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="age" jdbcType="VARCHAR" property="age"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="heat" jdbcType="VARCHAR" property="heat"/>
+        <result column="last_active_time" jdbcType="VARCHAR" property="lastActiveTime"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.crawler.mama.model.Mama">
+        insert into mama (title, user_name, age, city, heat, last_active_time)
+        values (
+          #{title,jdbcType=VARCHAR},
+          #{userName,jdbcType=VARCHAR},
+          #{age,jdbcType=VARCHAR},
+          #{city,jdbcType=VARCHAR},
+          #{heat,jdbcType=VARCHAR},
+          #{lastActiveTime,jdbcType=VARCHAR})
+    </insert>
+</mapper>
